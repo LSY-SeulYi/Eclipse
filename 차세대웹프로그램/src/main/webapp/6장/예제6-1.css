@@ -1,0 +1,14 @@
+@charset "UTF-8";
+p3{
+	color : green;
+	background-color : yellow;
+}
+p{
+	color:green;
+	background-color:yellow;
+}
+.xxx {
+	background-color : magenta;
+	heigh : 30px;
+	width : 150px;
+}

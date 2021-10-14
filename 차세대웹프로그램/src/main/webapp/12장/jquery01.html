@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리 연습</title>
+	<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+</head>
+<body>
+	<script>
+		$(document).ready(function() {
+			$("button#hide").click(function() {
+				$("p").hide();
+			});
+		});
+		$(document).ready(function() {
+			$("button#show").click(function() {
+				$("p").show();
+			});
+		});
+	</script>
+	<p>메시지 : 제이쿼리 헬로~~~</p>
+	<button id="hide">메세지 감추기</button>&nbsp;&nbsp;&nbsp;&nbsp;
+	<button id="show">메세지 보이기</button>
+</body>
+</html>

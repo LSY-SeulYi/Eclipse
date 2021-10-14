@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전역 변수와 지역 변수 이해하기2</title>
+</head>
+<body>
+	<script>
+		function getGrade() {
+			kor=95;
+		}
+		var kor=100;
+		getGrade();
+		document.write("국어 점수 : " + kor + "<br/>");
+	</script>
+</body>
+</html>

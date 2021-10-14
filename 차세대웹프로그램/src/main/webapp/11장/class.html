@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스(틀)를 만들어 객체(인스턴스) 생성하기</title>
+	<script>
+	// 틀을 만들때는 function을 쓰고 그 뜰의 첫머리는 대문자로 시작한다.
+		function Student(name,age,height,phone){	// Student 가 클래스, (name,age,height,phone)가 메소드, 객체
+			this.name=name;
+			this.age=age;
+			this.height=height;
+			this.phone=phone;
+			this.speech=function(){
+				return this.name+'이(가) 유창하게 말한다.';	
+			}
+			this.toString=function(){
+				return this.name +','+this.age+','+this.height+','+this.phone;
+			}
+	}
+	</script>
+</head>
+<body>
+	<script>
+		a=new Student('유관순',18,157,'010-0000-0000');
+		b=new Student('안중근',29,169,'010-1000-1000');
+		c=new Student('이순신',34,175,'010-2200-2200');
+		d=new Student('김일등',31,177,'010-3330-3330');
+		e=new Student('윤봉길',38,184,'010-4444-4444');
+		
+		//document.write(a.toString()+"<br/>");
+		//document.write(b.toString()+"<br/>");
+		//document.write(c.toString()+"<br/>");
+		//document.write(d.toString()+"<br/>");
+		//document.write(e.toString()+"<br/>");
+		
+		//
+		students =[a,b,c,d,e, new Student('변학도',45,175,'010-2222-9999')];
+		for (let i=0;i<students.length;i++) {
+			document.write(students[i].toString()+"<br/>");
+		}
+		
+		// 3사람의 평균 키를 구하라.
+		sum=0;
+		// for(let idx=0;idx<students.length;idx++){}		for문 구버전
+		for(idx in students) {		// 향상된 for문
+			sum+=students[idx].height;
+		}
+		avgH=Math.round(sum/students.length*10)/10;
+		document.write("평균키 : " +avgH+"cm <br/>");
+		
+		// 말하는 폼세 출력
+		for(idx in students){
+			document.write(students[idx].speech()+"<br/>");
+		}
+	</script>
+</body>
+</html>

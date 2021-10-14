@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>setAttribute() 메소드를 사용해 속성값 설정하기</title>
+	<script>
+		function add() {
+			var img=document.createElement('img');
+			img.setAttribute('src', '20191015_220401.jpg');
+			img.setAttribute('width', 300);
+			img.setAttribute('height', 300);
+			document.body.appendChild(img);
+		};
+	</script>
+</head>
+<body>
+	<a href="#" onclick="add()">[이미지 추가]</a>
+</body>
+</html>

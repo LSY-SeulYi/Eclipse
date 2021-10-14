@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2차원배열을 테이블로 만드는 함수 설계</title>
+<script>
+	function makeTable(arr,caption){//2차원배열을 매개변수로 
+		var table = document.createElement('table');
+		var ttag = document.createElement('caption');
+		var tcontent = document.createTextNode(caption);
+			ttag.appendChild(tcontent);
+			table.appendChild(ttag);
+
+		for(let i=0;i<arr.length;i++){// 행
+			var tr = document.createElement('tr');
+			for(let j=0;j<arr[i].length;j++){// 열
+				var td = document.createElement('td');
+				var text = document.createTextNode(arr[i][j]);
+				td.appendChild(text);
+				tr.appendChild(td);
+			}
+			table.appendChild(tr);
+			table.setAttribute('border','1');
+
+		}
+		document.body.appendChild(table);
+		//return table;
+	}
+</script>
+
+
+</head>
+<body>
+<script>
+var tableData =[
+['홍길동',78,90,77],
+['윤중삼',67,23,45],
+['장학도',77,88,99],
+['김씨네',100,45,87]
+];
+//document.write(makeTable(tableData));
+makeTable(tableData,"우리반성적");
+</script>
+</body>
+</html>

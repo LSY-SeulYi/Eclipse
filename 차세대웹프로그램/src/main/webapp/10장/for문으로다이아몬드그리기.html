@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다이아몬드 그리기</title>
+</head>
+<body>
+<script>
+size = prompt("다이몬드 size(7,9,11 등과 같이 홀수로 입력)");
+diamond=""; 
+ABOVE = 1;
+BELOW = 2; 
+MID = Math.floor(size/2);
+st = ABOVE;
+for(i =0;i<size;i++){
+if(i>MID) st = BELOW;
+for(j=0;j<size;j++){
+switch(st){
+case ABOVE:
+if(j>=MID-i && j<= MID+i) diamond += "●" ;
+else diamond += "○";
+break;
+case BELOW:
+if(j<MID-(size-1-i) || j> MID+(size-1-i)) diamond += "○" ;
+else diamond += "●";
+break;
+}
+}
+//
+diamond += "<br/>";
+}
+document.write(diamond);
+</script>
+</body>
+</html>

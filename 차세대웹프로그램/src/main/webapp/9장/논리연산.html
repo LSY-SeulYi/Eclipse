@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>논리 연산</title>
+</head>
+<body>
+	<script>
+		이름 = "순이";
+		나이 = 18;
+		김국환이찾는사람인가 = (나이==18) && (이름=="순돌");  // 논리 and 연산 (논리곱 &&)
+		
+		document.write("찾는 사람 맞아요? :" + 김국환이찾는사람인가 +"<br/>");
+		
+		과목점수 = 45;
+		평균점수 = 80;
+		합격여부 = (과목점수>=40) && (평균점수>=60);  // 논리 and 연산 (논리곱 &&)
+		
+		document.write("pass? :" + 합격여부 +"<br/>");
+		
+		돈많은가 = true;
+		미남인가 = false;
+		배필인가 = 돈많은가 || 미남인가  // 논리 or 연산 (논리합 ||)
+		
+		document.write("배필인가 :" + 배필인가 +"<br/>");
+		
+		사람인가 = !false;
+		동물인가 = !true;  // 논리 부정 연산 (논리부정 !)
+		
+		document.write("사람인가 :" + 사람인가 +"<br/>");
+		document.write("동물인가 :" + 동물인가 +"<br/>");
+		
+		//-------------------------------------------교재내용 예제9-15-------------------------------------------------------//
+		
+		var x=5;
+		var y=7;
+		var result;
+		result=(x<10 && y>10); // 논리곱
+		document.write("(x<10 && y>10) :" + result +"<br/>");
+		
+		result=(x<10 || y>10); // 논리합
+		document.write("(x<10 || y>10) :" + result +"<br/>");
+		
+		result=!(x<10 && y>10); // 논리부정
+		document.write("!(x<10 && y>10) :" + result +"<br/>");
+	</script>
+</body>
+</html>

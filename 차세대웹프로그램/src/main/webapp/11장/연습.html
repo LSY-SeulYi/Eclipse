@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자 함수로 객체만들기</title>
+</head>
+<body>
+	<script>
+		var student = new Object();		// 생성자 함수를 이용한 객체를 선언 [Object()=생성자를 말함 (class)]
+		
+		// 객체 속성에 해당되는 정적인 요소 ==> 객체 변수라고도 함.
+		student.name='김일등';		//student.name = student 가 객체, name 가 변수
+		student.age=29;
+		student.height=183;
+		student.weight=71;
+		student.sex='man';
+		
+		// 객체 동적요소 ==> 메소드 (사용법) : 모두 리턴값이 있어야 하는 것은 아니다.
+		student.speech=function(){
+			return '유창하게 말한다.';
+		};
+		student.toString=function(){		// 객체를 표현하는 양식
+			return '이름:김일등, 나이:29세, 키:183cm, 몸무게:71kg, 성별:남성';
+			return '이름:'+this.name+',나이:'+this.age+',키:'+this.height+',몸무게:'+this.weight+',성별:'+this.sex+'';
+		};
+		document.write("학생이름:"+student.name+"<br/>");
+		document.write(student.toString()+"<br/>");
+	</script>
+</body>
+</html>

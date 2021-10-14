@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전역변수와 지역변수</title>
+</head>
+<body>
+	<script>
+		function getKor()  // 함수 정의
+			var kor=95; // 지역변수
+			return kor;	
+		function getMath()  // 함수 정의
+			var math=65; // 지역변수
+			return math;	
+		function getEng()  // 함수 정의
+			var eng=95; // 지역변수
+			return eng;	
+		
+		document.write("국어 점수 : " + getKor() + "<br>");
+		document.write("수학 점수 : " + getMath() + "<br>");
+		document.write("영어 점수 : " + getEng() + "<br>");
+	</script>
+</body>
+</html>

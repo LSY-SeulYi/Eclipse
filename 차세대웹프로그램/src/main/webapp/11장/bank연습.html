@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="name"></p>
+	<p id="balance"></p>
+	<p id="account"></p>
+	
+		<script>
+			var acc = {
+				name: '이름 : 김은행',
+				balance: 5000,
+				account: '계좌 번호 : 1234-56-78910',
+				deposite: function(sum) {
+					this.balance += sum;
+					return this.balance;
+				},
+				withdraw: function(sum) {
+					this.balance -= sum;
+					return this.balance;
+				}
+			}
+			document.getElementById("name").innerHTML=acc.name;
+			document.getElementById("balance").innerHTML=acc.balance;
+			document.getElementById("account").innerHTML=acc.account;
+			
+			function deposite(form) {
+				var amount = Number(form.elements[0].value);
+				acc.deposite(amount);
+				document.getElementById("balance").innerHTML=acc.balance;
+			}
+			function withdraw(form) {
+				var amount = Number(form.elements[2].value);
+				acc.withdraw(amount);
+				document.getElementById("balance").innerHTML=acc.balance;
+			}
+
+		</script>
+		<form name="myAccount">
+			예금액 : <input type="text" name="depos"/>
+			<button type="button" onclick="deposite(myAccount)">예금</button><br/>
+			인출액 : <input type="text" name="wdraw"/>
+			<button type="button" onclick="withdraw(myAccount)">인출</button><br/>
+			</input>
+		</form>
+</body>
+</html>

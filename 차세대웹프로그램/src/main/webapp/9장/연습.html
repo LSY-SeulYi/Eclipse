@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연산 연습</title>
+</head>
+<body>
+	<script>
+		// 문자열의 결합
+		var a = "청산리";
+		var b = "벽개수야";
+		var c = 365;
+		var d = 235;
+		
+		document.write(a+" "+b+"<br/>");
+		document.write(a+c+"<br/>");
+		document.write(c+b+"<br/>");
+		//----------------------------------------------|
+		document.write(c+d+"<br/>");
+		document.write("<br/>"+c+d+"<br/>"); // c+d 앞에 문자열이 있어서 값이 365235로 나오는 것임
+		document.write("합:"+c+d);  // c+d 앞에 문자열이 있어서 값이 365235로 나오는 것임
+		document.write("<br/>"+(c+d)+"<br/>"); // c+d 앞에 문자열이 있는 경우 둘에 괄호를 넣어주면 값이 600이 나옴
+		document.write("합:"+(c+d));  // c+d 앞에 문자열이 있는 경우 둘에 괄호를 넣어주면 값이 600이 나옴
+	</script>
+</body>
+</html>

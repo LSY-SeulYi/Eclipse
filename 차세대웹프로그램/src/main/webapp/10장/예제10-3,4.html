@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>무명 함수 호출하기</title>
+</head>
+<body>
+	<script>
+		var text1="함수 선언 전 호출 에러";
+		var text2="함수 선언 후 호출만 가능";
+		//printMsg(text1);					// 함수 선언 전 호출 에러
+		var printMsg=function(msg) {
+			document.write("함수 호출 메시지 : " + msg + "<br>");
+		}
+		printMsg(text2);					// 함수 선언 후 호출 가능
+		
+	//--------------------------------------------------------------------------------
+	
+		var printMsg=function(qwe) {
+			document.write("무명함수 : " + qwe + "<br>");
+		}
+		function printMsg(qwe) {
+			document.write("기본함수 : " + qwe + "<br>");
+		}
+		printMsg("호출되었습니다.");
+	</script>
+</body>
+</html>

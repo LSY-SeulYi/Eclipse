@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>달력 만들기</title>
+	<script>
+		function getCalendar(year,month) {
+			cal ="";		// 만들 카렌다 스트링.(빈 카렌다 생성해서 리턴에서 호출)
+			var cals = new Array(7);		// 배열방식으로 카렌다 7줄 만들기
+		// 요일 정보 - 첫 시작일자의 위치 정하기
+			var weekDay = new Date(year,month-1,1).getDay();		// month 이번달
+			var endDay = new Date(year,month,0).getDate();			// month 다음달
+		// 7줄 중 첫줄을 요일을 표시한다.
+			cals[0] = new Array("일요일","월요일","화요일","수요일","목요일","금요일","토요일");
+		// 카렌다의 일자를 표기하는 줄 만들기
+			for(let i=1,cnt=1;i<7;i++) {		// 2번째 줄에서 7번째(끝) 줄까지 만드는것
+				cals[i] = new Array(7);
+				for(j=0;j<7;j++) {
+					if(i==1 && j<weekDay) {
+						cals[i][j]="☆";
+					}else if(cnt<=endDay) {
+						cals[i][j]= cnt++;
+					}else {
+						cals[i][j]="☆";
+					}
+				}
+			}
+			cal ="<table border='5'>";
+			for(x=0;x<cals.length;x++) {
+				cal += "<tr>";
+				for(y=0;y<cals[x].length;y++) {
+					cal += "<td>"+cals[x][y]+"</td>";
+				}
+				cal += "</tr>";
+			}
+			cal += "</table>";
+			return cal;
+		}
+	</script>
+</head>
+<body>
+	<script>
+	// 오늘 날짜 아는 법.
+		today = new Date();
+		document.write("오늘:"+today+"<br/>")
+	// 지정한 날짜로 날짜 객체 만들기
+		dday = new Date(2021,10,08);
+	// 지정한 날짜가 무슨 요일인가?
+		yoil = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+		document.write("수료일의 요일:"+yoil[dday.getDay()]+"<br/>");
+	// 오늘이 속한 달의 마지막 일자?
+	// 오늘의 년/월
+		year = today.getFullYear();
+		document.write("올해:"+year+"<br/>")
+		month = today.getMonth()+1;
+		document.write("현재 월:"+month+"<br/>")
+		lastDay = new Date(year,month,0);		// 현재 월 마지막 날짜(다음달0일)의 객체
+	//마지막일자
+		document.write("5월의 마지막 날짜 :"+lastDay.getDate()+"<br/>");
+		for(let i=1;i<=12;i++){
+			document.write("<h1>"+i+"월</h1>");
+			document.write(getCalendar(2021, i));
+			document.write("<p/>");
+		}
+	</script>
+</body>
+</html>

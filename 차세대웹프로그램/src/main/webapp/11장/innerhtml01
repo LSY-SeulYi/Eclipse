@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>원하는 위치에 원하는 값을 출력한다.</title>
+	<script>
+		function dispGugudan(form) {
+			var dan=form.elements[0].value;
+			$gugudan ="";
+			for(let i=1;i<=9;i++) {
+				$gugudan += dan + "*"+i+"="+(dan*i)+"<br/>";
+			}
+			document.getElementById("display").innerHTML = $gugudan;
+		}
+	</script>
+</head>
+<body>
+	<div id="display"></div>
+	<form name="myForm">
+		단입력:<input type="type="text" name="dan"/>
+		<button type="button" onclick="dispGugudan(myForm)">구구단출력</button>
+	</form>
+</body>
+</html>

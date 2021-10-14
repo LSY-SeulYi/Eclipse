@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성하기</title>
+	<script>
+		function add() {
+			var header=document.createElement('h3');
+			var img=document.createElement('img');
+			img.src='20191227_190928.jpg';
+			img.width=300;
+			img.height=300;
+			var textNode=document.createTextNode('내 이름은 홍길동입니다.');
+			header.appendChild(textNode);
+			document.body.appendChild(header);
+			document.body.appendChild(img);
+		};
+	</script>
+</head>
+<body>
+	<a href="#" onclick="add()">당신의 이름은 무엇입니까?</a>
+	<p></p>
+	<a href="#" onclick="add()">[이미지 추가]</a>
+</body>
+</html>

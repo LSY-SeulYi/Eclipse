@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 연습 2</title>
+	<script>
+		var arrdata=[];		// 전역 배열 변수 선언
+		function insertArr() {
+			var i=0;
+			for(let i=0;i<100;i++) {
+				arrdata[i]=i+1;
+			}
+			selectArr();
+		}
+		function selectArr() {
+			var i;
+			for(let i = 0;i<arrdata.length;i++) {
+				document.write(arrdata[i]+"&nbsp;");
+				if((i+1)%10===0) {
+					document.write("<br/>");
+				}
+			}
+			sumArr();
+		}
+		function sumArr() {
+			var i;
+			var sum=0;
+			for(let i=0;i<arrdata.length;i++) {
+				sum+=arrdata[i];
+			}
+		var x=0;
+		var tum=0;
+		while(1) {
+			x+=3;
+		if(x>100)
+				break;
+			tum+=x;
+			document.write(x+" ");
+		}
+			document.write("<p/>");
+			document.write("1~100까지 수 중 3의 배수 합 :" + tum + "<br/>");
+			document.write("<h2>배열데이터 덧셈 결과 출력</h2><hr>");
+			document.write("<h2>"+sum+"</h2><hr>");
+			document.write("<a href='arrayexam02.html'>돌아가기</a>");
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="insertArr()">배열생성/조회/연산</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var x=5;  // 0101 => 1010
+		var y=7;  // 0111 => 1000
+		var result;
+		
+		result=(x&y); // 비교곱
+		document.write("x&y : " + result + "<br>");
+		result=(x|y); // 비트합
+		document.write("x|y : " + result + "<br>");
+		result=(x ^ y); // 배타적 비트합
+		document.write("x ^ y : " + result + "<br>");
+		result=(~x); // 비트 부정
+		document.write("~x : " + result + "<br>");
+		result=(~y); // 비트 부정
+		document.write("~y : " + result + "<br>");
+
+	</script>
+</body>
+</html>

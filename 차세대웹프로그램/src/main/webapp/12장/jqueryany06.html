@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메소드 체이닝 실습하기</title>
+	<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#slide").click(function() {
+				$("#pane1").css("color","red")
+				.slideDown(2000)
+				.slideUp(6000)
+				.fadeTo("slow",0.3);
+			});
+		});
+	</script>
+	<style>
+		#slide, #pane1 {
+			padding : 5px;
+			text-align : center;
+			background-color : #e5eecc;
+			border : solid 1px #c3c3c3;
+		}
+		#pane1 {
+			padding : 50px;
+			display : none;
+			background-color : #ffff00;
+		}
+	</style>
+</head>
+<body>
+	<div id="slide">[오늘의 공지사항]</div>
+	<div id="pane1">금일 츄르 파격 특가! <br/>
+					당일 11시59분까지 선착순 100명에게 츄르 1봉 100원에 드립니다~~!!</div>
+</body>
+</html>

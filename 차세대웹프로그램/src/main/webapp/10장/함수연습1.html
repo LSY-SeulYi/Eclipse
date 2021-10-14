@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 연습1</title>
+	<script>
+		function printMsg(msg){
+			document.write(msg+"<br>");
+	}
+		function ctof(degree){//섭씨를 화씨로
+			return (degree*9/5)+32;
+	}
+	</script>
+</head>
+<body>
+	<script>
+		for(let i=1;i<=9;i++){
+			printMsg("9*"+i+"="+(9*i));
+		}
+		//
+		for(let q=1;q<100;q++){
+			printMsg("섭씨:"+q+"도 ==> 화씨 "+ctof(q)+"F");
+		}
+	</script>
+</body>
+</html>

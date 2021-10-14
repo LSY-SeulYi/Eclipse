@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css스타일 변경</title>
+<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+<style>
+div {
+width: 100px;
+height: 100px;
+float: left;
+margin: 5px;
+background: yellow;
+}
+
+.box {
+background: red;
+}
+</style>
+<script>
+var ud = 10;
+function updown() {
+ud *= -1;
+}
+
+$(document).ready(function() {
+var xWidth = 100;
+var yHeight = 100;
+$("div").click(function() {
+$(this).addClass("box");
+$(this).addClass("box");
+xWidth += ud;
+yHeight += ud;
+$(this).width(xWidth);
+$(this).height(yHeight);
+});
+});
+</script>
+</head>
+<body>
+<div>박스1</div>
+<div>박스2</div>
+<div>박스3</div>
+<div>박스4</div>
+<div>박스5</div>
+<br>
+<button xxonclick="updown()">크게/작게</button>
+</body>
+</html>

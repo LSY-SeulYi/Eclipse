@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>디지털시계</title>
+<script>
+function clock() {
+var today = new Date();
+var year = today.getFullYear()+"-"
+var day = today.getMonth() + 1 + "-" + today.getDate()+ " ";
+var time = today.getHours() + ":" + today.getMinutes() + ":"
++ today.getSeconds();
+var yoil =['일','월','화','수','목','금','토'];
+var y = yoil[today.getDay()];
+document.getElementById("disp").innerHTML ="<h2>"+year+day+" "+y+"요일"+"</h2>";
+document.getElementById("disp2").innerHTML="<h1>"+  time+"</h1>";
+setTimeout('clock()', 1000);
+}
+</script>
+</head>
+<body>
+<table border='10' align='center'
+style="color: yellow; background-color: green">
+<tr>
+<td align='center'>디지털시계</td>
+</tr>
+
+<tr>
+<td id="disp" align='center'></td>
+</tr>
+<tr>
+<td id="disp2" align='center'></td>
+</tr>
+
+</table>
+<script>
+clock();
+</script>
+</body>
+</html>

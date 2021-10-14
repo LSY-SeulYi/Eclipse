@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function getgugudanColumn(a,b){
+		return "<td>"+a+"*"+b+"="+(a*b)+"</td>";
+	}
+</script>
+</head>
+<body>
+<script>
+	document.write("<table border='1'>")
+		for(i = 1;i<=9;i++) {
+			document.write("<tr>")
+			for(j = 2;j<=9;j++) {
+			document.write(getgugudanColumn(j,i));
+		}
+			document.write("</tr>");
+		}
+	document.write("</table>");
+	</script>
+</body>
+</html>

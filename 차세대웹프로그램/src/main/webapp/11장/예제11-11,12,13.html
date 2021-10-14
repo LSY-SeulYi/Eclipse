@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>date 객체 활용하기</title>
+</head>
+<body>
+	<p id="d1"></p>
+	<p id="d2"></p>
+	<p id="d3"></p>
+	<p id="d4"></p>
+	<p id="d5"></p>
+	<p id="d6"></p>
+	<p id="d7"></p>
+	<p id="d8"></p>
+	<p id="d9"></p>
+		<script>
+			// 기본 생성자
+			document.getElementById("d1").innerHTML=new Date();
+			// 1970.01.01 이후의 밀리초 계산
+			document.getElementById("d2").innerHTML=new Date(1491803527400);
+			// 문자열 날짜
+			document.getElementById("d3").innerHTML=new Date("October 15, 2018 06:18:07");
+			// 주의 사항 : 월(month)은 0부터 시작
+			// 날짜 지정
+			document.getElementById("d4").innerHTML=new Date(2018, 11, 25, 18, 30, 29);
+//-----------------------------------------------------------------------------------------------------------------
+			var today=new Date();
+			document.getElementById("d1").innerHTML=today.getFullYear()+"년";
+			document.getElementById("d2").innerHTML=today.getMonth()+1+"월"+today.getDate()+"일";
+			document.getElementById("d3").innerHTML=today.getHours()+"시"+today.getMinutes()+"분"+today.getSeconds()+"초";
+			document.getElementById("d4").innerHTML="1970년 1월 1일 이후 현재까지 몇 초가 지났나요?</p>"+today.getTime()+"ms시가 지났습니다.";
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+			var today=new Date();
+			document.getElementById("d1").innerHTML=today.toDateString();
+			document.getElementById("d2").innerHTML=today.toISOString();
+			document.getElementById("d3").innerHTML=today.toJSON();
+			document.getElementById("d4").innerHTML=today.toLocaleDateString();
+			document.getElementById("d5").innerHTML=today.toLocaleTimeString();
+			document.getElementById("d6").innerHTML=today.toLocaleString();
+			document.getElementById("d7").innerHTML=today.toString();
+			document.getElementById("d8").innerHTML=today.toTimeString();
+			document.getElementById("d9").innerHTML=today.toUTCString();
+		</script>
+</body>
+</html>

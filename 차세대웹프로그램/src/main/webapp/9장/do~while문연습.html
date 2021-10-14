@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>do~while문</title>
+</head>
+<body>
+	<script>
+		i=1;
+		sum=0;
+		do{
+			sum+=i;
+			i++;
+		}while(i<=100);
+		alert("1~100까지 합 : " + sum+"\n");
+		
+	//-----------------------------------------------------------
+	
+		q=1;
+		gugudan = "";
+		do{
+			gugudan += "9*"+q+"="+(9*q)+"\n";
+			q++;
+		}while(q<=9);
+		alert("구구단을 외자!\n" + gugudan);
+		
+	//-----------------------------------------------------------
+	
+		w=1;
+		e="";
+		do{
+			e += "7*"+w+"="+(7*w)+"\n";
+			w++;
+		}while(w<=9);
+		alert("7단 \n" + e);
+	</script>
+</body>
+</html>

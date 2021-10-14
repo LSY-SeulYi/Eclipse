@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>continue문</title>
+</head>
+<body>
+	<script>
+		num = prompt("원하는 배수");
+		i=0;
+		sum=0;
+		do{
+			i++;
+			if(1%num!=0) continue;
+			document.write(i+"&nbsp;");
+			sum +=i;
+		}while(i<=100);
+		document.write("<br/>" +num+"배수의 합:"+sum);
+	</script>
+</body>
+</html>

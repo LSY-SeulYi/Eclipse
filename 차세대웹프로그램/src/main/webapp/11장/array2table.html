@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2차원 배열을 테이블로 만드는 함수 설계</title>
+	<script>
+		function makeTable(arr,caption) {		// 2차원 배열을 매개변수로 
+			var table = document.createElement('table');
+			var ttag = document.createElement('caption');
+			var tcontent = document.createTextNode(caption);
+			ttag.appendChild(tcontent);
+			table.appendChild(ttag);
+			for(let i=0;i<arr.length;i++) {		// 행 만들기
+				var tr = document.createElement('tr');		// 1행에 tr태그 한줄 만들기
+				for(let j=0;j<arr[i].length;j++) {		// 열 만들기
+					var td = document.createElement('td');		// 1열에 td태그 한줄 만들기
+					var text = document.createTextNode(arr[i][j]);
+					td.appendChild(text);
+					tr.appendChild(td);
+				}
+				table.appendChild(tr);
+				table.setAttribute('border','1');
+			}
+		 	document.body.appendChild(table);
+		}
+	</script>
+</head>
+<body>
+	<script>
+		var tableDeta = [
+			['홍길동',78,90,77,34,34],
+			['윤중삼',67,23,45],
+			['장학도',77,88,99],
+			['김씨네',100,45,87],
+			['유관순',65,85,99],
+			['우리반 화이팅~~~']
+		];
+		// document.write(makeTable(tableDeta));
+		makeTable(tableDeta,"우리반 성적");
+	</script>
+</body>
+</html>

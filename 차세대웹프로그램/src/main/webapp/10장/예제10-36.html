@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index Of : 배열에서 자료의 위치 (index값) 알기</title>
+</head>
+<body>
+	<script>
+		var names = ['길동','세리','찬호','길동','영광','길동','지효','두환'];
+		
+		// 길동의 인덱스 (앞에서 찾을 때) - 첫번째
+		document.write("첫머리 :" +names.indexOf('길동')+"<br/>");
+		var firstPos = names.indexOf('길동');
+		
+		// 길동의 인덱스 (앞에서 찾을 때) - 두번째
+		var secondPos = names.indexOf('길동',firstPos+1);
+		document.write("두번째 :" +secondPos+"<br/>");
+		
+		// 길동의 인덱스 (앞에서 찾을 때) - 세번째
+		var thirdPos = names.indexOf('길동',secondPos+1);
+		document.write("세번째 :" +thirdPos+"<br/>");
+		
+		// 길동의 인덱스 (뒤에서 찾을 때) - 첫번째
+		var lastPos = names.lastIndexOf('길동');
+		document.write("끝머리첫번째 :" +lastPos+"<br/>");
+		
+		// 길동의 인덱스 (뒤에서 찾을 때) - 두번째
+		var lastsecondPos = names.lastIndexOf('길동',lastPos-1);
+		document.write("끝머리두번째 :" +lastsecondPos+"<br/>");
+		
+		// 길동의 인덱스 (뒤에서 찾을 때) - 세번째
+		var lastthirPos = names.lastIndexOf('길동',lastsecondPos-1);
+		document.write("끝머리세번째 :" +lastthirPos+"<br/>");
+		
+//-----------------------------------------------------------------------------------------
+
+		//for문으로 많은 데이터의 인덱스 배열 자료위치 알아보기
+		//for문에서 i를 쓰는이유 : 인덱스의 i로 널리 사용됨.
+		var pos=-1;
+		for(let i=0;;i++) {  // 얼마나 돌아갈지 몰라 조건을 없앰
+			pos=names.indexOf('길동',pos+1);
+			if(pos===-1) break;
+			document.write("길동의 위치 :" +pos+"<br/>");
+		}
+	</script>
+</body>
+</html>

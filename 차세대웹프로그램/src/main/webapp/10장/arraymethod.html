@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열 관련 메소드 연습</title>
+</head>
+<body>
+	<script>
+		var arrData = [9,8,7,6,5,4,3,2,1];
+		document.write(arrData);
+		document.write("<p/>");
+		var rData = arrData.reverse();		// 원본을 변환시킴
+		document.write(arrData);
+		document.write("<p/>");
+		document.write(rData);
+		document.write("<p/>");
+		var joinData = arrData.join();
+		var concatDate = arrData.concat(10,11,12);		// 원본은 변화되지 않음
+		document.write(rData instanceof Array);		// true
+		document.write("<p/>");
+		document.write(joinData instanceof Array);		// fulse
+		document.write("<p/>");
+		document.write(concatDate instanceof Array);		// true
+		document.write("<p/>");
+		document.write(rData);
+		document.write("<p/>");
+		document.write(joinData);
+		document.write("<p/>");
+		document.write(concatDate+"<p/>");
+		
+	//----------------------------------------------------------
+		
+		var arrData = [1,3,5,7,9,11,13,15,17];
+		var rData = arrData.reverse();
+		document.write(rData instanceof Array);
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if문 연습</title>
+</head>
+<body>
+	<script>
+		// if 문은 총 3가지 방법이 있음.
+		// 1 -- if (조건) {실행할 문장} --- (예 : )
+		// 2 -- if (조건) {} else {}  --- (예 : )
+		// 3 -- if (조건1) {} else if (조건2) {} ... else {} --- (예 : 90점이상이면a, 80점이상이면b, 70점이상이면c...)
+		// if 문안에 if문이 또 들어갈 경우 중첩 if문 이라고 함.
+		
+		age = Number(prompt("당신의 나이는?"));
+		if(age>=19){
+			res = "성인";
+		}else{
+			res = "미성년";
+		}
+		document.write(res+"<br>");
+		//
+
+		score = Number(prompt("당신의 성적은?"));
+		if(score>=90) {
+			grade = "A";
+		}else if(score>=80) {
+			grade = "B";
+		}else if(score>=70) {
+			grade = "C";
+		}else if(score>=60) {
+			grade = "D";
+		}else {
+			grade = "F"
+		}
+		tail="F";
+		if(score>=60){
+			if(score&10>=5,100){
+				tail = "+";
+			}
+		}else{
+			tail = "0";
+		}
+		document.write("당신의 학점은"+ grade+"<br>");
+		document.write("당신의 학점은"+ grade+tail + "입니다.<br>");
+		// ---------------------------------------------------------------
+		
+	</script>
+</body>
+</html>

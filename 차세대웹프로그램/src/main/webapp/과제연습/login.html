@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PowerWho:로그인</title>
+<link rel="stylesheet" href="login.css">
+<link rel="icon" href="./img/powerwhoicon.ico">
+<script src="login.js"></script>
+</head>
+<body>
+        <div id="header">
+           	<img src="./img/powerWhoLogo.png" id="logo">
+        </div>
+        <!-- wrapper -->
+        <div id="wrapper">
+
+            <!-- content-->
+            <div id="content">
+
+                <!-- ID -->
+			<div>
+				<h3 class="join_title">
+					<label for="id">아이디</label>
+				</h3>
+				<span class="box int_id"> <input type="text" id="id"
+					class="int" maxlength="20"> <span></span>
+				</span> <span class="error_next_box"></span>
+			</div>
+
+			<!-- PW1 -->
+                <div>
+                    <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                    <span class="box int_pass">
+                        <input type="password" id="pswd1" class="int" maxlength="20">
+                        <span id="alertTxt"></span>
+                       <!--  <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg"> -->
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+                
+                                <div class="btn_area">
+                                
+                     <form name="login"><button type="button" id="btnJoin" onclick="loginProcess()">
+                       <span>로그인</span>
+                    </button></form>
+                </div>
+                
+                </div>
+                </div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

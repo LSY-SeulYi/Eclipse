@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forEach 메소드 활용하기</title>
+</head>
+<body>
+	<script>
+		var kdata=['경기도','서울','강원도','충청도','전라도','경상도'];
+		var scores=new array(123,456,345,333,777,653);
+		function printArr(value,idx) {
+			document.write("자료["+idx+"]="+value+"<br/>");
+		}
+		function printArr2(value) {
+			document.write(value+"<br/>");
+		}
+		var sum=0;
+		function sumValue(value){
+			sum +=value;
+		}
+		kdata.forEach(printArr);
+		kdata.forEach(printArr2);
+		scores.forEach(sumValue);
+		document.write("합1:"+sum+"<br/>");
+		sum = 0;
+		scores.forEach(function(value){sum+=value;});
+		document.write("합2:"+sum+"<br/>");
+		
+//---------------------------------------------------------------------------------------
+
+		var kdata=['서울','부산','청주','대구'];
+		function printArr(item, index) {
+			document.write("배열 데이터 ["+index +"] :"+item+"<br/>");
+		}
+		kdata.forEach(printArr);
+		
+//---------------------------------------------------------------------------------------
+
+		var data=[1,2,3,4,5,6,7,8,9,10];
+		var sum=0;
+		function addArr(value) {
+			sum+=value
+		}
+		data.forEach(addArr);
+		document.write("배열 데이터 합 :"+sum+"<p/>");
+	</script>
+</body>
+</html>

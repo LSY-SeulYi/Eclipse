@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2차원배열연습2</title>
+</head>
+<body>
+<script>
+	var students = ['홍길동','홍경래','임꺽정','김두환'];
+	var kor = [78,99,67,90];
+	var eng = [87,45,56,78];
+	var math = [78,89,88,99];
+	// 앞의 1차원 배열들을 묶어 상관배열 형태의 2차원 배열 구성
+	var data = {'학생':students,'국어':kor,'영어':eng,'수학':math}; 
+
+// 총점내기 
+	var scores = [kor,eng,math];
+	var total = [0,0,0,0];
+	for(let i=0;i<scores.length;i++){			// i 는 과목을 의믜
+	for(let j=0;j<scores[i].length;j++){		// j 는 사람을 의미
+		total[j] += scores[i][j];
+		}
+	}
+	var avg =[0,0,0,0]; 
+	for(let i=0;i<total.length;i++){
+	avg[i] = Math.round(total[i]/3*100)/100;
+	}
+
+	data.총점 = total;		// data값을 따로 배열에 안넣어도 만들어짐
+	data.평균 = avg;			// data값을 따로 배열에 안넣어도 만들어짐
+// 모든 성적 자료를 조회하기 
+	for(x in data){
+	document.write(x+": ");
+	for(let i=0;i<data[x].length;i++){
+	document.write(data[x][i]+"&nbsp");
+		}
+	document.write("<br />");
+	}
+// table 로 화면구현 하기 
+	document.write("<table border='5' align='center' width='40%'>");
+	for(x in data){
+	document.write("<tr align='center'>");
+	document.write("<th>");
+	document.write(x);
+	document.write("</th>");
+	for(let i=0;i<data[x].length;i++){
+	document.write("<td>");
+	document.write(data[x][i]+"&nbsp")
+	document.write("</td>");
+		}
+	document.write("</tr>");
+	}
+	document.write("</table>");
+
+
+</script>
+</body>
+</html>

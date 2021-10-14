@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체로 은행계정 흉내내기</title>
+</head>
+<body>
+	<p id="name"></p>
+	<p id="balance"></p>			
+	<script>
+	// balance는 회계에서 대변차변을 나타내고 은행에서는 잔액을 나타냄
+	// 통장 개설
+		var acc = {
+			name:'홍길동',
+			balance:5000,		// balance : 잔액
+			deposite: function(sum) {		// deposite : 저축
+				this.balance += sum;
+				return this.balance;		// 이 지역에 객체불러오려면 this 붙여야함.
+			},
+			withdraw: function(sum) {		// withdraw : 출금
+				this.balance -= sum;
+				return this.balance;
+			}
+		}
+	
+	// 객체의 초기값
+		document.getElementById("name").innerHTML=acc.name;
+		document.getElementById("balance").innerHTML=acc.balance;
+		
+	// 함수 만들기 (저축과 인출)
+		function deposite(form) {
+			var amount = Number(form.elements[0].value);		// amount : 금액, Number는 안넣어도 상관없음
+			acc.deposite(amount);
+			document.getElementById("balance").innerHTML=acc.balance;
+		}
+		function withdraw(form) {
+			var amount = Number(form.elements[2].value);		// amount : 금액, Number는 안넣어도 상관없음
+			acc.withdraw(amount);
+			document.getElementById("balance").innerHTML=acc.balance;
+		}
+	</script>
+		<form name="myForm">
+			저축액 : <input type="text" name="depos"/>
+			<button type="button" onclick="deposite(myForm)">저축하기</button><br/>
+			인출액 : <input type="text" name="with"/>
+			<button type="button" onclick="withdraw(myForm)">인출하기</button><br/>
+			</input>
+		</form>
+</body>
+</html>

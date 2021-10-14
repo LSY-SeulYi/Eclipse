@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>map 메소드 활용</title>
+</head>
+<body>
+	<script>
+		function mapOperate(value) {
+			res = Math.sqrt(value);
+			return res;
+		}
+		var data=[2,3,4,5,6,7,8,9];
+		var resSqrt = data.map(mapOperate);			// resSqrt = resultSqrt (루트)
+			document.write("<p/>"+data+"<br/>");
+			document.write("<p/>"+resSqrt+"<br/>");
+	</script>
+</body>
+</html>

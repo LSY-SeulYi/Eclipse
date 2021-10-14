@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	// 틀을 만들때는 function을 쓰고 그 뜰의 첫머리는 대문자로 시작한다.
+		function Student(name,age,height,phone){	// Student 가 클래스, (name,age,height,phone)가 메소드, 객체
+			this.name=name;
+			this.age=age;
+			this.height=height;
+			this.phone=phone;
+			var total=[0]
+			for(let i=0;i<height.length;i++){
+				for(let j=0;j<height[i].length;j++){
+					total[j] += height[i][j];
+					}
+				}
+				var avg =[0]; 
+			for(let i=0;i<total.length;i++){
+				avg[i] = Math.round(total[i]/3*100)/100;
+				}
+			this.speech=function(){
+				return '유창하게 말한다.';	
+			}
+			this.toString=function(){
+				return this.name +','+this.age+','+this.height+','+this.phone;
+			}
+	}
+	</script>
+</head>
+<body>
+	<script>
+		a=new Student('유관순',18,157,'010-0000-0000');
+		b=new Student('안중근',29,169,'010-1000-1000');
+
+		document.write(a.toString()+"<br/>");
+		document.write(b.toString()+"<br/>");
+
+		students =[a,b, new Student('변학도',45,175,'010-2222-9999')];
+		for (let i=0;i<students.length;i++) {
+			document.write(students[i].toString()+"<br/>");
+		}
+		
+		// 3사람의 평균 키를 구하라.
+
+		document.write("평균키 : " +avg[i]+"cm <br/>");
+		
+	</script>
+</body>
+</html>

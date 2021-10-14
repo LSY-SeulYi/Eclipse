@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sort 연습해보기</title>
+	<script>
+		var aravia=[5,6,9,7,1,45,684,555,27485,12,699,6532,79985];
+		var english=['money','cake','car','kiwi','ball','xenon'];
+		var korea=['광개토대왕','이순신','세종대왕','신사임당','유관순','주몽','논개'];
+		document.write("오름차순정렬1 :" + aravia.sort(function(a,b){return a-b;}) + "</p>");
+		document.write("오름차순정렬2 :" + english.sort() + "</p>");
+		document.write("오름차순정렬3 :" + korea.sort() + "</p>");
+		document.write("내림차순정렬1 :" + aravia.sort(function(a,b){return b-a;}) + "</p>");
+		
+		var data1=[4,5,98,7,,4,7,2,4,57,3,4,57,685,7324,5];
+		var data2=[98,55,7,14,2,5,6,3,35,,4,1,2,5,57,6,7,654,32,4,657,];
+		var data3=['a','e','q','t','l','b','y','z','v'];
+		var data4=['file01','file09','file05','file06','file02','file04','file03','file08','file07','file10'];
+		document.write("sort 오름차순배열 1 :" +data1.sort(function(a,b) {return a-b;})+"</p>");
+		document.write("sort 내림차순배열 1 :" +data1.sort(function(a,b) {return b-a;})+"</p>");
+		document.write("sort 오름차순배열 2 :" +data2.sort(function(a,b) {return a-b;})+"</p>");
+		document.write("sort 내림차순배열 2 :" +data2.sort(function(a,b) {return b-a;})+"</p>");
+		document.write("sort 배열 3 :" +data3.sort()+"</p>");
+		document.write("sort 배열 4 :" +data4.sort()+"</p>");
+	</script>
+</head>
+
+</body>
+</html>
