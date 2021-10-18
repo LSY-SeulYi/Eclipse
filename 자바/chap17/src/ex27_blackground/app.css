@@ -1,0 +1,27 @@
+
+
+
+#vbox1{
+	-fx-background-color: rgba(0,0,0,1);
+}
+#vbox2{
+	-fx-background-color: linear-gradient(to right ,#000000,#ffffff);
+}
+#vbox3{
+	-fx-background-color: radial-gradient(center 50% 50% , radius 50%, #ffffff, #000000);
+}
+#vbox4{
+	-fx-border-color: skyblue;
+	-fx-background-image:url("images/자바.png");
+}
+#vbox5{
+	-fx-border-color: pink;
+	-fx-background-image:url("images/fruit9.jpg");
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
+#vbox6{
+	-fx-border-color: yellow;
+	-fx-background-image:url("images/phone04.png");
+	-fx-background-repeat:space;
+}

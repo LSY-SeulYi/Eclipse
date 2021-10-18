@@ -1,0 +1,22 @@
+
+Label{
+	-fx-padding: 5;
+	-fx-background-color: pink;
+}
+
+#lblFirst{
+	-fx-background-color: black;
+	-fx-Text-Fill: yellow;
+}
+#lblSecond{
+	-fx-background-color: blue;
+	-fx-Text-Fill: white;
+}
+#lblThird{
+	-fx-background-color: blue;
+	-fx-Text-Fill: white;
+}
+.someClass{
+	-fx-background-color: yellow;
+	-fx-Text-Fill: black;
+}

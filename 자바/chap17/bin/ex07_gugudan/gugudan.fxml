@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="468.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ex07_gugudan.GugudanControll">
+   <children>
+      <TextField fx:id="txtDan" layoutX="14.0" layoutY="14.0">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Button fx:id="btndisp" layoutX="175.0" layoutY="14.0" mnemonicParsing="false" onAction="#display" text="구구단출력" />
+      <Button fx:id="btnclear" layoutX="272.0" layoutY="14.0" mnemonicParsing="false" onAction="#clear" text="지우기" />
+      <TextArea fx:id="textarea" layoutX="14.0" layoutY="46.0" prefHeight="407.0" prefWidth="547.0" style="-fx-background-color: pink;">
+         <font>
+            <Font size="30.0" />
+         </font></TextArea>
+   </children>
+</AnchorPane>

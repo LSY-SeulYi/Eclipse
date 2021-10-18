@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane fx:id="root" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="ex21_tableviewfactory.RootController">
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="800.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="성적처리" textAlignment="CENTER" textFill="#e80a0a">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="23.0" prefWidth="800.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="txtName" alignment="CENTER" promptText="학생이름" />
+                  <TextField fx:id="txtKor" alignment="CENTER" promptText="국어성적" />
+                  <TextField fx:id="txtEng" alignment="CENTER" promptText="영어성적" />
+                  <TextField fx:id="txtMath" alignment="CENTER" promptText="수학성적" />
+                  <Button fx:id="btnAdd" alignment="CENTER" mnemonicParsing="false" onAction="#handleBtnAdd" text="추가하기" />
+                  <Button fx:id="btnSort" alignment="CENTER" mnemonicParsing="false" onAction="#handleBtnSort" text="정렬하기" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </top>
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#handleBtnUpdate" text="수정/등록" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#handleBtnDelete" text="삭제" />
+            <Button fx:id="btnIndex" mnemonicParsing="false" onAction="#handleBtnIndex" text="색인" />
+            <Button fx:id="btnSample" mnemonicParsing="false" onAction="#handleBtnSample" text="샘플" />
+        </buttons>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+</BorderPane>

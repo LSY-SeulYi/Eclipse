@@ -1,0 +1,354 @@
+package application;
+
+import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
+import common.ConnectionFactory;
+import common.TableViewFactory;
+import dao.DepartmentsDAO;
+import dao.EmployeesDAO;
+import dao.Job_HistoryDAO;
+import dao.JobsDAO;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import service.HRService;
+import vo.Departments;
+import vo.Employees;
+import vo.Jobs;
+
+public class EmployeesController implements Initializable{
+
+	DepartmentsDAO departmentsdao = new DepartmentsDAO();
+	EmployeesDAO employeesdao = new EmployeesDAO();
+	Job_HistoryDAO jobhistorydao = new Job_HistoryDAO();
+	JobsDAO jobsdao = new JobsDAO();
+	HRService hrservice = new HRService();
+	
+	TableView table = TableViewFactory.getTable(Employees.class);
+	
+    @FXML
+    private BorderPane leftPanel;
+
+    @FXML
+    private TextField txtEmployee_Id;
+
+    @FXML
+    private TextField txtFirst_Name;
+
+    @FXML
+    private TextField txtLast_Name;
+
+    @FXML
+    private TextField txtEmail;
+    
+    @FXML
+    private TextField txtPhone_Number;
+
+    @FXML
+    private TextField txtCommission_pct;
+
+    @FXML
+    private TextField txtSalary;
+
+    @FXML
+    private ComboBox<Jobs> comboJob_Id;
+
+    @FXML
+    private ComboBox<Departments> comboDepartment_Id;
+
+    @FXML
+    private TextField dateHire_Date;
+
+    @FXML
+    private ComboBox<Employees> comboManager_Id;
+
+    @FXML
+    private Button btnInsert;
+
+    @FXML
+    private Button btnUpdate;
+
+    @FXML
+    private Button btnDelete;
+
+    @FXML
+    private Button btnSelect;
+
+    @FXML
+    private Button btnSelectAll;
+
+    @FXML
+    private Button btnClear;
+
+    @FXML
+    private TextField txtStartDate;
+
+    @FXML
+    private TextField txtEndDate;
+
+    @FXML
+    private Button btnStartEndDate;
+
+    @FXML
+    private ComboBox<Departments> comboDepartment_Id1;
+
+    @FXML
+    private Button btnOrderByPay;
+
+    @FXML
+    private Button btnSalary;
+
+    @FXML
+    private ComboBox<Jobs> comboJob_Id1;
+
+    @FXML
+    private Button btnFirst_Name;
+
+    @FXML
+    private TextField txtFirst_Name1;
+
+    @FXML
+    private Button btnPhone_Number;
+
+    @FXML
+    private TextField txtPhone_Number1;
+
+    @FXML
+    private Button btnCommiss;
+
+    @FXML
+    private Button btnEmplID;
+
+    @FXML
+    private BorderPane centerPanel;
+
+    public Date str2Date(String x) {
+		String strs[] = x.split("-");
+		if(strs[1].charAt(0)=='0')strs[1] = strs[1].replace("0","");
+		if(strs[2].charAt(0)=='0')strs[2] = strs[2].replace("0","");
+		int year = Integer.parseInt(strs[0])-1900;
+		int month = Integer.parseInt(strs[1])-1;
+		int day = Integer.parseInt(strs[2]);
+		return new Date(year,month,day);
+	}
+    
+    private Employees getVo() {
+		Employees vo = new Employees();
+		vo.setFirst_name(txtFirst_Name.getText());
+		vo.setLast_name(txtLast_Name.getText());
+		vo.setEmail(txtEmail.getText());
+		vo.setPhone_number(txtPhone_Number.getText());
+		vo.setHire_date(str2Date(dateHire_Date.getText()));
+		vo.setJob_id(comboJob_Id.getSelectionModel().getSelectedItem().getJob_id());
+		vo.setSalary(Integer.parseInt(txtSalary.getText()));
+		vo.setCommission_pct(Double.parseDouble(txtCommission_pct.getText()));
+		vo.setManager_id(comboManager_Id.getSelectionModel().getSelectedItem().getEmployee_id());
+		vo.setDepartment_id(comboDepartment_Id.getSelectionModel().getSelectedItem().getDepartment_id());
+		return vo;
+	}
+    
+    @FXML
+    void clear(ActionEvent event) {
+    	table.getItems().clear();
+		txtEmployee_Id.setText(null);
+    	txtFirst_Name.setText(null);
+    	txtLast_Name.setText(null);
+    	txtEmail.setText(null);
+    	txtPhone_Number.setText(null);
+    	dateHire_Date.setText(null);
+    	txtCommission_pct.setText(null);
+    	txtSalary.setText(null);
+    	comboJob_Id.setValue(null);
+    	comboManager_Id.setValue(null);
+    	comboDepartment_Id.setValue(null);
+    }
+
+    @FXML
+    void salary(ActionEvent event) {
+        List<Employees> result = hrservice.getEmpListSalaryBy();
+       clear(new ActionEvent());
+      table.getItems().addAll(result);
+    }
+
+    @FXML
+    void delete(ActionEvent event) {
+    	int selNum = table.getSelectionModel().getSelectedIndex();
+		Employees emp = (Employees) table.getSelectionModel().getSelectedItem();
+		int empId = emp.getEmployee_id();
+		try {
+			employeesdao.delete(empId);
+			table.getItems().remove(selNum);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void commiss(ActionEvent event) {
+    	List<Employees> result = hrservice.getcommiss();
+    	clear(new ActionEvent());
+        table.getItems().addAll(result);
+    }
+
+    @FXML
+    void emplID(ActionEvent event) {
+    	List<Employees> result = hrservice.getFirstName();
+    	clear(new ActionEvent());
+		table.getItems().addAll(result);
+    }
+
+    @FXML
+    void first_Name(ActionEvent event) {
+    	String name = txtFirst_Name1.getText();
+    	List<Employees> result = hrservice.getName(name);
+    	clear(new ActionEvent());
+        table.getItems().addAll(result);
+    }
+
+    @FXML
+    void insert(ActionEvent event) {
+    	try {
+    		employeesdao.insert(getVo());
+			int id = employeesdao.getMax();
+			System.out.println("id:"+id);
+			Employees vo = employeesdao.select(id);
+			table.getItems().add(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void orderByPay(ActionEvent event) {
+    	List<Employees> result = hrservice.getEmpListOrderbyPay();
+    	clear(new ActionEvent());
+		table.getItems().addAll(result);
+    }
+
+    @FXML
+    void phone_Number(ActionEvent event) {
+    	String phone = txtPhone_Number1.getText();
+    	List<Employees> result = hrservice.getPhone(phone);
+    	clear(new ActionEvent());
+        table.getItems().addAll(result);
+    }
+
+    @FXML
+    void select(ActionEvent event) {
+    	String conditions = 
+				JOptionPane.showInputDialog("WHERE 포함한 조건");
+		try {
+			List<Employees> data = employeesdao.selectByConditions(conditions);
+			table.getItems().clear();
+			table.getItems().addAll(data);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void selectAll(ActionEvent event) {
+    	try {
+    		table.getItems().clear();
+    		table.getItems().addAll(employeesdao.selectAll());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void update(ActionEvent event) {
+    	try {
+			Employees vo = getVo();
+			vo.setEmployee_id(Integer.parseInt(txtEmployee_Id.getText()));
+			employeesdao.update(vo);
+			int selNum = table.getSelectionModel().getSelectedIndex();
+			table.getItems().set(selNum, vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		try {
+			comboJob_Id.getItems().addAll(jobsdao.selectAll());
+			comboManager_Id.getItems().addAll(employeesdao.selectAll());
+			comboDepartment_Id.getItems().addAll(departmentsdao.selectAll());
+			comboDepartment_Id1.getItems().addAll(departmentsdao.selectAll());
+			comboJob_Id1.getItems().addAll(jobsdao.selectAll());
+			setTable();
+			table.getItems().addAll(employeesdao.selectAll());
+			
+			comboJob_Id1.valueProperty().addListener(new ChangeListener<Jobs>() {
+				@Override
+				public void changed(ObservableValue<? extends Jobs> observable, Jobs oldValue, Jobs newValue) {
+					List<Employees> result = hrservice.getEmpListByJob(newValue.getJob_id());
+					clear(new ActionEvent());
+					table.getItems().addAll(result);	
+				}
+			});	
+			
+			comboDepartment_Id1.valueProperty().addListener(new ChangeListener<Departments>() {
+				@Override
+				public void changed(ObservableValue<? extends Departments> observable, Departments oldValue, Departments newValue) {
+					List<Employees> result = hrservice.getEmpListByDep(newValue.getDepartment_id());
+					clear(new ActionEvent());
+					table.getItems().addAll(result);	
+				}
+			});
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+		public void setTable() throws SQLException {
+			table.setOnMouseReleased(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					try {
+						Employees selected =  (Employees) table.getSelectionModel().getSelectedItem();
+						txtEmployee_Id.setText(selected.getEmployee_id()+"");
+						txtFirst_Name.setText(selected.getFirst_name());
+						txtLast_Name.setText(selected.getLast_name());
+						txtEmail.setText(selected.getEmail());
+						txtPhone_Number.setText(selected.getPhone_number());
+						dateHire_Date.setText(selected.getHire_date().toString());
+						comboJob_Id.getSelectionModel().select(jobsdao.select(selected.getJob_id()));
+						txtSalary.setText(selected.getSalary()+"");
+						txtCommission_pct.setText(selected.getCommission_pct()+"");
+						comboManager_Id.getSelectionModel().select(employeesdao.select(selected.getManager_id()));
+						comboDepartment_Id.getSelectionModel().select(departmentsdao.select(selected.getDepartment_id()));
+					} catch (NumberFormatException e) {
+						e.printStackTrace();
+						return;
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			});
+			centerPanel.setCenter(table);
+		}
+			@FXML
+			void startEndDate(ActionEvent event) {
+				Date a = str2Date(txtStartDate.getText());
+				Date b = str2Date(txtEndDate.getText());
+				List<Employees> result = hrservice.getEmpListByHireDate(a, b);
+				clear(new ActionEvent());
+				table.getItems().addAll(result);
+		}
+}

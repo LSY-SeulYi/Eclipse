@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+
+	<top>
+		<ToolBar style="-fx-background-color: lightyellow;">
+			<items>
+				<Button style="-fx-background-color: white;" text="어떤메뉴" />
+				<Button style="-fx-background-color: white;" text="무슨메뉴" />
+			</items>
+		</ToolBar>
+	</top>
+	<left>
+		<VBox style="-fx-background-color: lightyellow;">
+		<children>
+		<Button style="-fx-background-color: white; -fx-border-color: pink;" text="왼쪽메뉴1" />
+		<Button style="-fx-background-color: white; -fx-border-color: pink;" text="왼쪽메뉴2" />
+		</children>
+		</VBox>
+	</left>
+	<bottom>
+		<TextField />
+	</bottom>
+	<right>
+	
+	</right>
+	<center>
+		<TextArea />
+	</center>
+	
+</BorderPane>
