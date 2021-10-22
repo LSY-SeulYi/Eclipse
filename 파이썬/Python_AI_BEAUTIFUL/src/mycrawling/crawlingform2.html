@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}레시피 검색{% endblock %} 
+
+
+{% block content %}
+	<h1>레시피 검색</h1>
+	<hr>
+	<form action="/dispCrawling/" method="post" >{% csrf_token %}
+    	<label for="issue_name">레시피 검색: </label>
+    	<input id="issue_name" type="text" name="word" value="딸기" >
+    	<input type="submit" value="OK">
+	</form>
+{% endblock content %} 
+
+{% block footer %}
+<footer class="fixed-bottom bg-info">
+	<div class="text-white font-italic text-right mr-5">Copyright
+		&copy; 2021 비젼직업전문학교 인공학습팀</div>
+</footer>
+{% endblock %}
