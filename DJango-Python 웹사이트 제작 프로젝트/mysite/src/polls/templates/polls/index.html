@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}index{% endblock %}
+{% block extra-style %}
+    <style>
+        * {
+            font-family: "Bitstream Vera Sans Mono";
+            font-style: italic;
+        }
+    </style>
+{% endblock extra-style %}
+{% block content %}
+
+{%if latest_question_list %}
+<br>
+   <h1><ul>
+   {%for question in latest_question_list %}
+      <li>
+         <a href="/polls/{{question.id}}/">{{question.question_text}}</a>
+      </li>
+   {% endfor %}   
+   </ul></h1>
+
+
+{% else %}
+   <p> No Polls are available.</p>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}My Diary{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    {% block extra-style %}{% endblock %}
+</head>
+
+<body style="padding-top:90px;">
+
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #ede7f6;">
+    <span class="navbar-brand mx-5 mb-2 font-weight-bold font-italic" style="font-size:25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Diary&nbsp;&nbsp;&nbsp;</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-1 btn btn-outline-danger">
+                <a class="nav-link text-danger" href="{% url 'home' %}">홈~!</a></li>
+            <li class="nav-item mx-1 btn btn-outline-danger">
+                <a class="nav-link text-danger" href="{% url 'bookmark:index' %}">맛집~!</a></li>
+            <li class="nav-item mx-1 btn btn-outline-danger">
+                <a class="nav-link text-danger" href="{% url 'blog:index' %}">일기장~!</a></li>
+            <li class="nav-item mx-1 btn btn-outline-danger">
+                <a class="nav-link text-danger" href="{% url 'photo:index' %}">사진첩~!</a></li>
+            <li class="nav-item mx-1 btn btn-outline-danger">
+                <a class="nav-link text-danger" href="{% url 'polls:index' %}">설문~!</a></li>
+            <li class="nav-item mx-1 btn btn-outline-danger">
+                <a class="nav-link text-danger" href="{% url 'myScheduling_bot' %}">스케쥴봇~!</a></li>
+            <li class="nav-item mx-1 btn btn-outline-danger">
+                <a class="nav-link text-danger" href="{% url 'core:home' %}">오늘뭐먹지~!</a></li>
+	        <li class="nav-item mx-1 btn btn-outline-danger">
+	                <a class="nav-link text-danger" href="{% url 'crawlingform' %}">블로그 검색~!</a></li>
+
+            <li class="nav-item dropdown mx-1 btn btn-outline-danger">
+                <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown">추가</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'bookmark:add' %}">가고싶은 맛집 추가~!</a>
+                    <a class="dropdown-item" href="{% url 'blog:add' %}">일기장 쓰기~!</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'photo:album_add' %}">앨범 추가~!</a>
+                    <a class="dropdown-item" href="{% url 'photo:photo_add' %}">앨범에 사진 추가~!</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown mx-1 btn btn-outline-danger">
+                <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown">변경</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'bookmark:change' %}">가고싶은 맛집 수정~!</a>
+                    <a class="dropdown-item" href="{% url 'blog:change' %}">일기장 수정~!</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'photo:album_change' %}">앨범 수정~!</a>
+                    <a class="dropdown-item" href="{% url 'photo:photo_change' %}">사진 수정~!</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown mx-1 btn btn-outline-danger">
+                <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown">Util</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'admin:index' %}">관리자</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'blog:post_archive' %}">Archive</a>
+                    <a class="dropdown-item" href="{% url 'blog:search' %}">Search</a>
+                </div>
+            </li>
+        </ul>
+        
+		<ul class="navbar-nav ml-5 mr-5">
+		    <li class="nav-item dropdown mx-1 btn btn-outline-danger">
+		        {% if user.is_active %}
+		        <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown">
+		            <i class="fas fa-user"></i>&ensp;{% firstof user.get_short_name user.get_username %}&ensp;</a>
+		        <div class="dropdown-menu">
+		            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+		            <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
+		        </div>
+		        {% else %}
+		        <a class="nav-link dropdown-toggle text-danger" href="#" data-toggle="dropdown">
+		            <i class="fas fa-user"></i>&ensp;Anonymous&ensp;</a>
+		        <div class="dropdown-menu">
+		            <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+		            <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+		        </div>
+		        {% endif %}
+		    </li>
+		</ul>
+
+    </div>
+</nav>
+
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+
+{% block footer %}{% endblock %}
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/c998a172fe.js"></script>
+
+{% block extra-script %}{% endblock %}
+
+</body>
+</html>
+
+ 

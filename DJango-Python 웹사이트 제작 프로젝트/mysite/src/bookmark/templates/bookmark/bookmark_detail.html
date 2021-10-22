@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}bookmark_detail.html{% endblock %}
+{% block extra-style %}
+    <style>
+        * {
+            font-family: "Bitstream Vera Sans Mono";
+            color: rgb(0, 151, 167);
+            font-style: italic;
+        }
+    </style>
+{% endblock extra-style %}
+{% block content %}
+
+    <h1>{{ object.title }}</h1>
+
+    <ul>
+        <li>URL: <a href="{{ object.url }}">{{ object.url }}</a></li>
+    </ul>
+
+{% endblock %}
+

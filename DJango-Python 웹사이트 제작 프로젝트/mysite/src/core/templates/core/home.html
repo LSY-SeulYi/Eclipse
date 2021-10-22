@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Today Recipe{% endblock %}
+
+{% block extra-style %}
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Bitstream Vera Sans Mono";
+            color: rgb(149, 117, 205);
+            border-color: rgb(255, 64, 129);
+            font-style: italic;
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type='text'] {
+            width: 30%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 2px solid rgb(128, 222, 234);
+        }
+
+        input[type='submit'] {
+            width: 30%;
+            padding: 5px;
+            background: black;
+            color: white;
+            text-transform: uppercase;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+{% endblock extra-style %}
+
+{% block content %}
+<div id="main">
+    <h1>오늘 뭐먹지~?</h1>
+    <h2>먹고 싶은 음식 재료를 검색해보세요~</h2>
+    <form method="GET">
+        <div>
+            <label for="recipe"></label>
+            <input type="text" id="recipe" value="{{ request.GET.recipe }}" placeholder="recipe..." name="recipe"/>
+        </div>
+        <input type="submit" value="Submit"/>
+    </form>
+   	{% autoescape off %}
+	    {% if result %}
+	    <br>
+	        <h1><strong>추천 음식 => {{ result.name }}</h1></strong><br> <h2>아래 그림을 클릭 하시면 레시피를 보실 수 있습니다~~^^*</h2><br>
+	        <a href="{{ result.href }}"><img src="{{ result.img }}" style="width: 400px;"></a><br><br><br><br>
+	        <h2>그 외 추천 메뉴~~</h2><br>
+	        {{ result.img1 }}
+	        <br>
+	        <br><br><br><br>
+	    {% endif %}
+    {% endautoescape %}
+</div>
+{% endblock %}

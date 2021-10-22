@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}home.html{% endblock %}
+
+{% block extra-style %}
+<style type="text/css">
+.home-image {
+    background-image: url("{% static 'img/다운로드.jpg' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 550px;
+    padding: 10px 0 0 10px;
+}
+.title {
+    color: rgb(255, 0, 128);
+    font-weight: bold;
+}
+.powered {
+    position: relative;
+    top: 4%;
+    color: rgb(250, 197, 239);
+    font-style: italic;
+}
+.col-sm-4 {
+    color: rgb(1, 87, 155);
+    font-style: italic;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="home-image">
+    	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2 class="title"></h2>
+        <h4 class="powered">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i> My Diary</h4>
+    </div>
+
+    <hr style="margin: 10px 0;">
+
+    <div class="row text-center">
+    	<div class="col-sm-4">
+            <h3>Although the world is full of suffering, It is full also of overcoming of it.</h3>
+            <p>세상은 고통으로 가득하지만, 그것을 이겨내는 일로도 가득 차 있다.</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Things end, people change, And life goes on.</h3>
+            <p>모든 건 끝이 있고 사람들은 변한다, 그래도 삶은 계속된다.</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>You get what you work for, not what you wish for.</h3>
+            <p>바란다고 다 얻는 것이 아니며, 내가 노력한 만큼 얻게 된다.</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>All we have is now.</h3>
+            <p>우리가 가진 것은 지금이다.</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Believe you can and you're halfway there.</h3>
+            <p>할 수 있다고 믿으면 반은 온 것이다.</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Desperate triumphs over luck.</h3>
+            <p>간절함은 행운을 이긴다.</p>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+<footer class="fixed-bottom" style="background-color: #ede7f6;">
+    <div class="text-dark font-italic text-right mr-5">Copyright &copy; 2021 My Diary by syLee</div>
+</footer>
+{% endblock %}
