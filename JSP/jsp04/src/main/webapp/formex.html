@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다양한 입력 폼</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<form action="FormEX" method="post">
+		<h1 align="center">회원 가입</h1>
+		<table align="center" border="5%" style=border-color:pink;width:500px;>
+			<tr align="center;" style=border-color:pink;font-size:20px;>
+				<td align="center;">
+					<div class="row" align="center">
+  						<div class="col-lg-6" align="center;">
+    					<div class="input-group" align="center;">
+     	 				<span class="input-group-addon" align="center;">
+						<br>
+							이름 : <input type="text" name="name" size="10" placeholder="name"><br/><br>
+							아이디 : <input type="text" name="id" size="10" placeholder="id"><br/><br>
+							비밀번호 : <input type="passworld" name="pw" size="10" placeholder="passworld"><br/><br>
+							비밀번호 확인 : <input type="passworld" name="pw" size="10" placeholder="passworld"><br/><br>
+							이메일 : <input type="passworld" name="pw" size="10" placeholder="E-Mail"><br/>
+						<br>
+				</td>
+			</tr>
+			      	</span>
+   	 </div><!-- /input-group -->
+ 	 </div><!-- /.col-lg-6 -->
+ 	 </div>
+		<table align="center" border="5%" style=border-color:pink;font-size:20px;width:500px;>
+			<tr align="center;" style=border-color:pink;font-size:20px;><br>
+				<td rowspan=6 colspan=2 align="center;" >
+				<div class="btn-group" data-toggle="buttons" align="center">
+  <label class="btn btn-info active">
+				&nbsp;취미 : <input type="checkbox" name="hobby" value="read" autocomplete="">독서
+						<input type="checkbox" name="hobby" value="cook" autocomplete="off">요리
+						<input type="checkbox" name="hobby" value="run" autocomplete="off">조깅
+						<input type="checkbox" name="hobby" value="swim" autocomplete="off">수영
+						<input type="checkbox" name="hobby" value="sleep" autocomplete="off">취침<br/>&nbsp;&nbsp;
+						<input type="checkbox" name="major" value="kor" autocomplete="off">국어
+						<input type="checkbox" name="major" value="eng" autocomplete="off">영어
+						<input type="checkbox" name="major" value="mat" autocomplete="off">수학
+						<input type="checkbox" name="major" value="des" autocomplete="off">디자인<br/>
+						</label>
+</div>
+										</td>
+			</tr>
+		</table>
+		<table align="center" border="5%" style=border-color:pink;font-size:20px;width:500px;>
+			<tr align="center;" style=border-color:pink;font-size:20px;><br>
+				<td align="center;">
+					&nbsp;프로토콜 : <select name="protocl">
+						<option value="http">http</option>
+						<option value="ftp" selected="selected">"ftp"</option>
+						<option value="smtp">smtp</option>
+						<option value="pop">pop</option>
+					</select> 
+				</td>
+			</tr>
+		</table>
+		<table align="center" border="5%" style=border-color:pink;font-size:20px;>
+			<tr align="center;" style=border-color:pink;font-size:20px;><br>
+				<td>비고</td>
+				<td style=width:430px;height:200px;><input type="text" style="font-size:20px;width:430px;height:200px;"></td>
+			</tr>
+		</table>
+		<table align="center" border="5%" style=border-color:pink;font-size:20px;>
+			<tr align="center;" style=border-color:pink;font-size:20px;><br>
+				<td rowspan=2 colspan=1>
+					&nbsp;<input style="background-color:black;color:white;border-color:yellow;font-size:20px;border-radius:30%;" type="submit" value="전 송">&nbsp;
+					&nbsp;<input style="background-color:black;color:white;border-color:yellow;font-size:20px;border-radius:30%;" type="reset" value="초기화">&nbsp;
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+</html>
