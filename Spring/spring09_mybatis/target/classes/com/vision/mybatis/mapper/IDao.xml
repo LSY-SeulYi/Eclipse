@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.vision.mybatis.dao.IDao">
+
+	<select id = "list" resultType="com.vision.mybatis.dto.MemberDTO">
+		SELECT * FROM AIMEMBER ORDER BY MEMID ASC
+	</select>
+	
+	<insert id = "insert" parameterType = "com.vision.mybatis.dto.MemberDTO">
+		INSERT INTO AIMEMBER (MEMID,MEMNAME,MEMPW) VALUES (#{memid},#{memname},#{mempw})
+	</insert>
+	
+	<!-- parameterType이 string -->
+	<delete id = "delete">
+		DELETE FROM AIMEMBER WHERE MEMID = #{param1}
+	</delete>
+	
+	<insert id = "batch" parameterType = "java.util.List">
+		<foreach item="dto" collection="list" open="INSERT ALL" close="SELECT * FROM SYS.DUAL" separator=" ">
+		INTO AIMEMBER (MEMID,MEMNAME,MEMPW) VALUES (#{dto.memid},#{dto.memname},#{dto.mempw})
+		</foreach>
+	</insert>
+	
+</mapper>

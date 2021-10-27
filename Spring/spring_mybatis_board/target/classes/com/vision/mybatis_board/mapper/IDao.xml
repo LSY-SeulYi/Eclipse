@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vision.mybatis_board.dao.IDao">
+
+	<select id="memList" resultType="com.vision.mybatis_board.dto.MemberDTO">
+		select * from aimember order by memname ASC
+	</select>
+	
+	<select id="insert">
+		insert into aimember(memid, memname, mempw) values (#{memid}, #{memname}, #{mempw})
+	</select>
+	
+	<delete id="delete">
+		delete from aimember where memid = #{memid}
+	</delete>
+</mapper>

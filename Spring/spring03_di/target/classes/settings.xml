@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id = "bmiCalc" class = "com.vision.diex.BMICalculator">
+		<property name = "lowWeight">
+			<value>18.5</value>
+		</property>
+		<property name = "normal">
+			<value>23</value>
+		</property>
+		<property name = "overWeight">
+			<value>25</value>
+		</property>
+		<property name = "obesity">
+			<value>30</value>
+		</property>
+	</bean>
+	
+	<bean id = "myinfo" class = "com.vision.diex.MyInfo">
+		<property name = "name">
+			<value>홍길동</value>
+		</property>
+		<property name = "height">
+			<value>185</value>
+		</property>
+		<property name = "weight">
+			<value>83</value>
+		</property>
+		<property name = "hobbys">
+			<list>
+				<value>수영</value>
+				<value>요리</value>
+				<value>독서</value>
+				<value>캠핑</value>
+			</list>
+		</property>
+		<property name = "bmiCalc">
+			<ref bean = "bmiCalc"/>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+
+	<context:annotation-config/>
+	<context:component-scan base-package="AppConfig2">
+		<context:include-filter type="annotation" expression="com.vision.ann_xml"/>
+	</context:component-scan>
+
+	<bean id = "student4" class="com.vision.common.Student">
+	<!-- 값을 넣을 때는 순서를 지켜서 넣어야 한다. -->
+		<constructor-arg value="윤시내"/>
+		<constructor-arg value="23"/>
+		<constructor-arg>
+			<list>
+				<value>잠자기</value>
+				<value>음악감상</value>
+				<value>맛집탐방</value>
+				<value>독서</value>
+			</list>
+		</constructor-arg>
+		<property name="height" value="159"></property>
+		<property name="weight" value="45"></property>
+	</bean>
+</beans>
