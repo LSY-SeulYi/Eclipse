@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>xx대학교</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top" id="container">
+            <div class="container">
+                <a class="navbar-brand" href="#!">xx대학교</a>
+                <table>
+                	<tr>
+						<td><a href="#">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td><a href="#">Join</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td><a href="system/system.jsp">StudentSystem</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td><a href="#">Library</a></td>
+                	</tr>
+                </table>
+            </div>
+        </nav>
+        
+        <!-- search-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">xx대학교에 궁금한것을 <br/>검색해보세요</h1>
+
+                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action="search.jsp" method="POST">
+                                <!-- search input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" id="emailAddress" type="text" placeholder="검색어를 입력하세요." required/>
+                                    </div>
+                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">검색</button></div>
+                                </div>
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        <p>To activate this form, sign up at</p>
+                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Icons Grid-->
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                            <h3><a href="intro/intro1.jsp">대학소개</a></h3>
+                            <p class="lead mb-0">총장인사말<br/>xx대학 상징<br/>조직도</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                            <h3><a href="#info">대학정보</a></h3>
+                            <p class="lead mb-0">오시는길<br/>대표번호<br/>입학문의</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                            <h3><a href="home03.jsp">대학알림</a></h3>
+                            <p class="lead mb-0">공지사항<br/>이달의 알림<br/>자주하는질문<br/>Q&A</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image Showcases-->
+        <section class="showcase" id="intro">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                   <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/img1.png')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2><a href="#">인문대학</a></h2>
+                        <p class="lead mb-0">인문학을 연구하는 학과들이 모여있는 종합대학이며 인간의 언어, 문학, 철학, 역사 따위를 전문적으로 연구하고 가르친다.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/img2.jpg')"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2><a href="#">자연과학</a></h2>
+                        <p class="lead mb-0">창의력, 첨단 과학기술, 성실성 및 현장 적응력을 겸비한 전문화, 실용화된 자연과학 인재 양성을 목표로 교육하고 있다.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/img3.jpg')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2><a href="#">공과대학</a></h2>
+                        <p class="lead mb-0">공학과 관련한 학위를 부여하며, 교육 외에도 산업체나 연구소와 연계한 연구 및 개발을 하고 있다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact-->
+        <section class="testimonials text-center bg-light" id="info">
+            <div class="container">
+            	<h2 class="mb-5">대학정보</h2>
+            	<hr class="divider" />
+            	<p class="text-muted mb-5">대전광역시 중구 선화동 중앙로121번길 20</p>    
+		<!-- Map-->
+     		<div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+           		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.3221904509987!2d127.42082741562416!3d36.32874050179464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654926b16e6a0d%3A0x80d44fdc0a39062b!2z67mE7KC87KeB7JeF7KCE66y47ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1631518967415!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+           		<br />
+        	</div>
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                    <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                    <div>Tel : 010-9624-8826 </div>
+                    <div>Fax : 042-123-4567</div>
+                    <div>E-mail : tmdgus10285@naver.com</div>
+                </div>
+            </div>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href="#container">대학홈페이지</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#intro">학부소개</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#info">대학정보</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="intro/intro1.jsp">대학알림</a></li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; OUR WEBSITE 2021. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

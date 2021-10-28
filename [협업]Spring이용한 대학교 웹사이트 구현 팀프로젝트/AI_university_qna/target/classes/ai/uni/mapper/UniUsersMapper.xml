@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="ai.uni.mapper.UniUsersMapper">
+
+	<select id="getList" resultType="ai.uni.dto.UniUsersVO">
+	<![CDATA[
+			select * from uni_users where uni_no > 0 and rownum <= 100
+			]]>
+	</select>
+	
+	<insert id="insert">
+		insert into uni_users (uni_no,uni_pos,uni_department,uni_name,uni_birth,uni_gender,uni_phone,uni_address,uni_id,uni_pw,uni_email,no) values (#{uni_no},#{uni_pos},#{uni_department},#{uni_name},#{uni_birth},#{uni_gender},#{uni_phone},#{uni_address},#{uni_id},#{uni_pw},#{uni_email},#{no})
+	</insert>
+	
+	<select id="read" resultType="ai.uni.dto.UniUsersVO">
+		select * from uni_users where uni_no = #{uni_no}
+	</select>
+	
+	<delete id="delete">
+		delete from uni_users where uni_no = #{uni_no}
+	</delete>
+	
+	<update id="update">
+		update uni_users set uni_pos = #{uni_pos}, uni_department = #{uni_department}, uni_name = #{uni_name}, uni_birth = #{uni_birth}, uni_gender = #{uni_gender}, uni_phone = #{uni_phone}, uni_address = #{uni_address}, uni_id = #{uni_id}, uni_pw = #{uni_pw}, uni_email = #{uni_email}, no = #{no} where uni_no = #{uni_no}
+	</update>
+
+</mapper>
